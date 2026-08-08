@@ -172,9 +172,9 @@ SELECT gender,
        COUNT(e_comm.customerid) AS numberofcustomers,
        SUM(churn) AS ChurnedCustomers,
        ROUND((SUM(churn)*1.0/COUNT(e_comm.customerid)*1.0)*100, 2) AS churnrate
-FROM e_comm
-GROUP BY gender
-ORDER BY churnrate DESC;
+    FROM e_comm
+        GROUP BY gender
+            ORDER BY churnrate DESC;
 
 -- Average time spent on app between churned and non churned customers
 SELECT e_comm.CustomerStatus, ROUND(AVG(e_comm.hourspendonapp), 2) AS averagetimespent
